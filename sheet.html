@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Operations</title>
+    <link rel="stylesheet" href="sheet.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Operations Panel (Fixed at the Top) -->
+        <div class="operations-panel">
+            <h1>Operations Panel</h1>
+
+            <div class="input-group">
+                <!-- Primary Column Input -->
+                <label for="primary-column">Primary Column (e.g., A):</label>
+                <input type="text" id="primary-column" class="input-field" placeholder="Primary Column">
+            </div>
+
+            <div class="input-group">
+                <!-- Columns for Operations Input -->
+                <label for="operation-columns">Columns (e.g., A,B,C):</label>
+                <input type="text" id="operation-columns" class="input-field" placeholder="Columns">
+            </div>
+
+            <div class="input-group">
+                <!-- Operation Type Selection -->
+                <label for="operation-type">Operation Type:</label>
+                <select id="operation-type" class="input-field">
+                    <option value="and">AND</option>
+                    <option value="or">OR</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <!-- Null/Not-Null Selection -->
+                <label for="operation">Null/Not-Null:</label>
+                <select id="operation" class="input-field">
+                    <option value="null">Null</option>
+                    <option value="not-null">Not Null</option>
+                </select>
+            </div>
+
+            <!-- Apply Button -->
+            <button id="apply-operation" class="button-apply">Apply Operation</button>
+        </div>
+
+        <!-- Excel Sheet Display Area -->
+        <div id="sheet-content" class="sheet-content"></div>
+
+        <!-- Download/Print Button -->
+        <div class="download-section">
+            <button id="download-button" class="button-download">Print/Download</button>
+        </div>
+
+        <!-- Modal for File Naming and Format -->
+        <div id="download-modal" class="modal">
+            <div class="modal-content">
+                <h2>Download the File</h2>
+                <label for="filename">Filename:</label>
+                <input type="text" id="filename" class="input-field" placeholder="filename">
+
+                <label for="file-format">Format:</label>
+                <select id="file-format" class="input-field">
+                    <option value="xlsx">Excel (.xlsx)</option>
+                    <option value="csv">CSV (.csv)</option>
+                    <option value="pdf">PDF (.pdf)</option>
+                    <option value="jpeg">JPEG (.jpeg)</option>
+                    <option value="jpg">JPG (.jpg)</option>
+                </select>
+
+                <button id="confirm-download" class="button-confirm">Download</button>
+                <button id="close-modal" class="button-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+        <script src="sheet.js"></script>
+    </div>
+</body>
+</html>
